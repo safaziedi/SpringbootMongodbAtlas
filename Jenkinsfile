@@ -19,10 +19,8 @@ pipeline {
 
         stage('Build maven'){
             steps{
-                dir('./back') {
+
                     sh 'mvn clean package'
-                     archiveArtifacts artifacts: 'target/*.jar', onlyIfSuccessful: true
-                }
             }
         }
     }}
